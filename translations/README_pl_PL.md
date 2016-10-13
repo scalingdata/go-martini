@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 Martini to solidny framework umożliwiający sprawne tworzenie modularnych aplikacji internetowych i usług sieciowych w języku Go.
 
@@ -9,7 +9,7 @@ Po zakończonej instalacji Go i ustawieniu zmiennej [GOPATH](http://golang.org/d
 ~~~ go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -22,7 +22,7 @@ func main() {
 
 Następnie zainstaluj pakiet Martini (środowisko **go** w wersji **1.1** lub nowszej jest wymagane):
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 Uruchom serwer:
@@ -40,7 +40,7 @@ Obejrzyj przygotowane [demo](http://martini.codegangsta.io/#demo)
 
 Zadawaj pytania na Stackoverflow dodając [tag martini](http://stackoverflow.com/questions/tagged/martini)
 
-GoDoc [dokumentacja](http://godoc.org/github.com/go-martini/martini)
+GoDoc [dokumentacja](http://godoc.org/github.com/scalingdata/go-martini)
 
 
 ## Cechy frameworka
@@ -69,18 +69,18 @@ W celu uzyskania więcej informacji o middleware'ach i ich możliwościach, prze
 * [FAQ](#faq)
 
 ## Domyślna konfiguracja (Martini Classic)
-Martini pozwala bardzo szybko uruchomić webserver korzystając przy tym z [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic). Standardowo Classic dostarcza domyślne ustawienia, które z powodzeniem pozwolą nam uruchomić wiele aplikacji internetowych:
+Martini pozwala bardzo szybko uruchomić webserver korzystając przy tym z [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic). Standardowo Classic dostarcza domyślne ustawienia, które z powodzeniem pozwolą nam uruchomić wiele aplikacji internetowych:
 ~~~ go
   m := martini.Classic()
   // ... miejsce na middleware'y i routing
   m.Run()
 ~~~
 
-Poniżej wymieniono kilka funkcji [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) dostarczanych automatycznie:
-  * Logowanie żądań/odpowiedzi - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-  * Serwowanie plików statycznych - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-  * Routing - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+Poniżej wymieniono kilka funkcji [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) dostarczanych automatycznie:
+  * Logowanie żądań/odpowiedzi - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+  * Serwowanie plików statycznych - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+  * Routing - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 ### Handlery
 Handlery to serce i dusza Martini. Handlerem można nazwać każdą funkcję postaci:
@@ -115,12 +115,12 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res i req są w
 })
 ~~~
 
-Następujące usługi są dostarczane razem z [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic):
+Następujące usługi są dostarczane razem z [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic):
   * [*log.Logger](http://godoc.org/log#Logger) - globalny logger dla Martini.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - kontekst żądania HTTP.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - `map[string]string` przechowująca nazwane parametry, znalezione podczas dopasowywania _routes_.
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - usługa wspierająca _route'y_.
-  * [martini.Route](http://godoc.org/github.com/go-martini/martini#Route) - bieżacy aktywny _route_.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - kontekst żądania HTTP.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - `map[string]string` przechowująca nazwane parametry, znalezione podczas dopasowywania _routes_.
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - usługa wspierająca _route'y_.
+  * [martini.Route](http://godoc.org/github.com/scalingdata/go-martini#Route) - bieżacy aktywny _route_.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - interfejs zapisu odpowiedzi HTTP.
   * [*http.Request](http://godoc.org/net/http/#Request) - żądanie HTTP.
 
@@ -159,7 +159,7 @@ m.NotFound(func() {
 
 _Route'y_ są dopasowywane w kolejności ich definiowania. Pierwszy dopasowany _route_ zostanie wywołany. 
 
-Wzorce ścieżek _route'ów_ mogą zawierać nazwane paremetry, dostępne poprzez usługę  [martini.Params](http://godoc.org/github.com/go-martini/martini#Params):
+Wzorce ścieżek _route'ów_ mogą zawierać nazwane paremetry, dostępne poprzez usługę  [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params):
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hello " + params["name"]
@@ -222,7 +222,7 @@ m.Run()
 ~~~
 
 #### Mapowanie na poziomie żądania
-Mapowanie na poziomie żądania może być wykonane w handlerze poprzez [martini.Context](http://godoc.org/github.com/go-martini/martini#Context):
+Mapowanie na poziomie żądania może być wykonane w handlerze poprzez [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context):
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -240,7 +240,7 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 ~~~
 
 ### Serwowanie plików statycznych
-Instancja [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) automatycznie serwuje statyczne pliki z katalogu "public" znajdującym się bezpośrednio w głównym katalogu serwera. Możliwe jest serwowanie dodatkowych katalogów poprzez dodanie handlerów [martini.Static](http://godoc.org/github.com/go-martini/martini#Static).
+Instancja [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) automatycznie serwuje statyczne pliki z katalogu "public" znajdującym się bezpośrednio w głównym katalogu serwera. Możliwe jest serwowanie dodatkowych katalogów poprzez dodanie handlerów [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static).
 ~~~ go
 m.Use(martini.Static("assets")) // serwuj zasoby z katalogu "assets"
 ~~~
@@ -282,7 +282,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 ~~~
 
 ### Next()
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context) jest opcjonalną funkcją, którą handlery middleware'ów wywołują, żeby przekazać tymczasowo obsługę żadania do kolejnych handlerów, a później do niej wrócić. Mechanizm sprawdza się doskonale w przypadku wykonywania operacji po obsłudze żądania HTTP:
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context) jest opcjonalną funkcją, którą handlery middleware'ów wywołują, żeby przekazać tymczasowo obsługę żadania do kolejnych handlerów, a później do niej wrócić. Mechanizm sprawdza się doskonale w przypadku wykonywania operacji po obsłudze żądania HTTP:
 ~~~ go
 // zaloguj przed i po żądaniu
 m.Use(func(c martini.Context, log *log.Logger){
@@ -337,7 +337,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

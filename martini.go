@@ -1,10 +1,10 @@
 // Package martini is a powerful package for quickly writing modular web applications/services in Golang.
 //
-// For a full guide visit http://github.com/go-martini/martini
+// For a full guide visit http://github.com/scalingdata/go-martini
 //
 //  package main
 //
-//  import "github.com/go-martini/martini"
+//  import "github.com/scalingdata/go-martini"
 //
 //  func main() {
 //    m := martini.Classic()

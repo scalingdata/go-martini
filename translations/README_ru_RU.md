@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 Martini - мощный пакет для быстрой разработки веб приложений и сервисов на Golang.
 
@@ -9,7 +9,7 @@ Martini - мощный пакет для быстрой разработки в�
 ~~~ go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -22,7 +22,7 @@ func main() {
 
 Потом установите пакет Martini (требуется **go 1.1** или выше):
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 Потом запустите ваш сервер:
@@ -38,7 +38,7 @@ go run server.go
 
 Задавайте вопросы на Stackoverflow используя [тэг martini](http://stackoverflow.com/questions/tagged/martini)
 
-GoDoc [документация](http://godoc.org/github.com/go-martini/martini)
+GoDoc [документация](http://godoc.org/github.com/scalingdata/go-martini)
 
 
 ## Возможности
@@ -66,19 +66,19 @@ GoDoc [документация](http://godoc.org/github.com/go-martini/martini)
 * [FAQ](#faq)
 
 ## Classic Martini
-Для быстрого старта [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) предлагает несколько предустановок, это используется для большинства веб приложений:
+Для быстрого старта [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) предлагает несколько предустановок, это используется для большинства веб приложений:
 ~~~ go
   m := martini.Classic()
   // ... middleware и роутинг здесь
   m.Run()
 ~~~
 
-Ниже представлена уже подключенная [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) функциональность:  
+Ниже представлена уже подключенная [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) функциональность:  
 
-  * Request/Response логгирование - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-  * Отдача статики - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-  * Роутинг - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+  * Request/Response логгирование - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+  * Отдача статики - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+  * Роутинг - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 ### Обработчики
 Обработчики - это сердце и душа Martini. Обработчик - любая функция, которая может быть вызвана:
@@ -113,12 +113,12 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res и req бу
 })
 ~~~
 
-Следующие сервисы включены в [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic):
+Следующие сервисы включены в [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic):
 
   * [*log.Logger](http://godoc.org/log#Logger) - Глобальный логгер для Martini.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - http request контекст.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - `map[string]string` именованых аргументов из роутера.
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - Хэлпер роутеров.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - http request контекст.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - `map[string]string` именованых аргументов из роутера.
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - Хэлпер роутеров.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - http Response writer интерфейс.
   * [*http.Request](http://godoc.org/net/http/#Request) - http Request.
 
@@ -157,7 +157,7 @@ m.NotFound(func() {
 
 Роуты могут сопоставляться с http запросами только в порядке объявления. Вызывается первый роут, который соответствует запросу.
 
-Паттерны роутов могут включать именованные параметры, доступные через [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) сервис:
+Паттерны роутов могут включать именованные параметры, доступные через [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) сервис:
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hello " + params["name"]
@@ -220,7 +220,7 @@ m.Run()
 ~~~
 
 #### Маппинг уровня запроса
-Маппинг на уровне запроса можно сделать при помощи [martini.Context](http://godoc.org/github.com/go-martini/martini#Context):
+Маппинг на уровне запроса можно сделать при помощи [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context):
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -238,8 +238,8 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 ~~~
 
 ### Отдача статических файлов
-Экземпляр [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) автоматически отдает статические файлы из директории "public" в корне, рядом с вашим файлом `server.go`.
-Вы можете добавить еще директорий, добавляя [martini.Static](http://godoc.org/github.com/go-martini/martini#Static) обработчики.  
+Экземпляр [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) автоматически отдает статические файлы из директории "public" в корне, рядом с вашим файлом `server.go`.
+Вы можете добавить еще директорий, добавляя [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static) обработчики.  
 ~~~ go
 m.Use(martini.Static("assets")) // отдача файлов из "assets" директории
 ~~~
@@ -272,7 +272,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 ~~~
 
 ### Next()
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context) опциональная функция, которая может быть вызвана в Middleware обработчике, для выхода из контекста, и возврата в него, после вызова всего стека обработчиков. Это можно использовать для операций, которые должны быть выполнены после http запроса:
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context) опциональная функция, которая может быть вызвана в Middleware обработчике, для выхода из контекста, и возврата в него, после вызова всего стека обработчиков. Это можно использовать для операций, которые должны быть выполнены после http запроса:
 ~~~ go
 // логгирование до и после http запроса
 m.Use(func(c martini.Context, log *log.Logger){
@@ -314,7 +314,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 마티니(Martini)는 강력하고 손쉬운 웹애플리케이션 / 웹서비스개발을 위한 Golang 패키지입니다.
 
@@ -8,7 +8,7 @@ Go 인스톨 및 [GOPATH](http://golang.org/doc/code.html#GOPATH) 환경변수 �
 ~~~go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -21,7 +21,7 @@ func main() {
 
 마티니 패키지를 인스톨 합니다. (**go 1.1** 혹은 그 이상 버젼 필요):
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 이제 서버를 돌려 봅시다:
@@ -39,7 +39,7 @@ go run server.go
 
 혹은 Stackoverflow에 [마티니 태크](http://stackoverflow.com/questions/tagged/martini)를 이용해서 물어봐 주세요
 
-GoDoc [문서(documentation)](http://godoc.org/github.com/go-martini/martini)
+GoDoc [문서(documentation)](http://godoc.org/github.com/scalingdata/go-martini)
 
 문제는 전부다 영어로 되어 있다는 건데요 -_-;;;
 나는 한글 아니면 보기 싫다! 하는 분들은 아래 링크를 참조하세요
@@ -71,19 +71,19 @@ GoDoc [문서(documentation)](http://godoc.org/github.com/go-martini/martini)
 * [FAQ](#faq)
 
 ## Classic Martini
-마티니를 쉽고 빠르게 이용하시려면, [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic)를 이용해 보세요. 보통 웹애플리케이션에서 사용하는 설정들이 이미 포함되어 있습니다.
+마티니를 쉽고 빠르게 이용하시려면, [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic)를 이용해 보세요. 보통 웹애플리케이션에서 사용하는 설정들이 이미 포함되어 있습니다.
 ~~~ go
   m := martini.Classic()
   // ... 미들웨어와 라우팅 설정은 이곳에 오면 작성하면 됩니다.
   m.Run()
 ~~~
 
-아래는 [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic)에 자동으로 제공되는 기본 기능들 입니다.
+아래는 [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic)에 자동으로 제공되는 기본 기능들 입니다.
 
-  * Request/Response 로그 기능 - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-  * 패닉 리커버리 (Panic Recovery) - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-  * 정적 파일 서빙 - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-  * 라우팅(Routing) - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+  * Request/Response 로그 기능 - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+  * 패닉 리커버리 (Panic Recovery) - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+  * 정적 파일 서빙 - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+  * 라우팅(Routing) - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 ### 핸들러(Handlers)
 
@@ -119,11 +119,11 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res와 req는 �
 })
 ~~~
 
-아래 서비스들은 [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic):에 포함되어 있습니다.
+아래 서비스들은 [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic):에 포함되어 있습니다.
   * [*log.Logger](http://godoc.org/log#Logger) - 마티니의 글로벌(전역) 로그.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - http 요청 컨텍스트.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - 루트 매칭으로 찾은 인자를 `map[string]string`으로 변형.
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - 루트 도우미 서비스.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - http 요청 컨텍스트.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - 루트 매칭으로 찾은 인자를 `map[string]string`으로 변형.
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - 루트 도우미 서비스.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - http Response writer 인터페이스.
   * [*http.Request](http://godoc.org/net/http/#Request) - http 리퀘스트.
 
@@ -162,7 +162,7 @@ m.NotFound(func() {
 
 루트들은 정의된 순서대로 매칭된다. 들어온 요구에 처음으로 매칭된 루트가 호출된다.
 
-루트 패턴은 [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) service로 액세스 가능한 인자들을 포함하기도 한다:
+루트 패턴은 [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) service로 액세스 가능한 인자들을 포함하기도 한다:
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hello " + params["name"]			// :name을 Params인자에서 추출
@@ -225,7 +225,7 @@ m.Run()
 ~~~
 
 #### 리퀘스트 레벨 맵핑(Request-Level Mapping)
-리퀘스트 레벨 맵핑은 핸들러안에서 [martini.Context](http://godoc.org/github.com/go-martini/martini#Context)를 사용하면 됩니다:
+리퀘스트 레벨 맵핑은 핸들러안에서 [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context)를 사용하면 됩니다:
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -244,7 +244,7 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 ~~~
 
 ### 정적파일 서빙(Serving Static Files)
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) 인스턴스는 "public" 폴더안에 있는 파일들을 정적파일로써 자동으로 서빙합니다. 더 많은 폴더들은 정적파일 폴더에 포함시키시려면 [martini.Static](http://godoc.org/github.com/go-martini/martini#Static) 핸들러를 이용하시면 됩니다.
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) 인스턴스는 "public" 폴더안에 있는 파일들을 정적파일로써 자동으로 서빙합니다. 더 많은 폴더들은 정적파일 폴더에 포함시키시려면 [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static) 핸들러를 이용하시면 됩니다.
 
 ~~~ go
 m.Use(martini.Static("assets")) // "assets" 폴더에서도 정적파일 서빙.
@@ -278,7 +278,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 ~~~
 
 ### Next()
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context)는  선택적 함수입니다. 이 함수는 http request가 다 작동 될때까지 기다립니다.따라서 http request 이후에 실행 되어야 할 업무들을 수행하기 좋은 함수입니다.
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context)는  선택적 함수입니다. 이 함수는 http request가 다 작동 될때까지 기다립니다.따라서 http request 이후에 실행 되어야 할 업무들을 수행하기 좋은 함수입니다.
 ~~~ go
 // log before and after a request
 m.Use(func(c martini.Context, log *log.Logger){
@@ -320,7 +320,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

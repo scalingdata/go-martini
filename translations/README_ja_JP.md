@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 MartiniはGolangによる、モジュール形式のウェブアプリケーション/サービスを作成するパワフルなパッケージです。
 
@@ -9,7 +9,7 @@ Goをインストールし、[GOPATH](http://golang.org/doc/code.html#GOPATH)を
 ~~~ go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -23,7 +23,7 @@ func main() {
 そのあとで、Martini パッケージをインストールします。(**go 1.1**か、それ以上のバーションが必要です。)
 
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 インストールが完了したら、サーバを起動しましょう。
@@ -41,7 +41,7 @@ go run server.go
 
 Stackoverflowで[martini tag](http://stackoverflow.com/questions/tagged/martini)を使い質問する
 
-GoDoc [documentation](http://godoc.org/github.com/go-martini/martini)
+GoDoc [documentation](http://godoc.org/github.com/scalingdata/go-martini)
 
 
 ## 特徴
@@ -69,18 +69,18 @@ GoDoc [documentation](http://godoc.org/github.com/go-martini/martini)
 * [FAQ](#faq)
 
 ## Classic Martini
-立ち上げ、すぐ実行できるように、[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) はほとんどのウェブアプリケーションで機能する、標準的な機能を提供します。
+立ち上げ、すぐ実行できるように、[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) はほとんどのウェブアプリケーションで機能する、標準的な機能を提供します。
 ~~~ go
   m := martini.Classic()
   // ... middleware and routing goes here
   m.Run()
 ~~~
 
-下記が[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic)が自動的に読み込む機能の一覧です。
-  * Request/Response Logging - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-  * Static File serving - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-  * Routing - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+下記が[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic)が自動的に読み込む機能の一覧です。
+  * Request/Response Logging - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+  * Static File serving - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+  * Routing - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 ### ハンドラ
 ハンドラはMartiniのコアであり、存在意義でもあります。ハンドラには基本的に、呼び出し可能な全ての関数が適応できます。
@@ -115,11 +115,11 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res and req are
 })
 ~~~
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic)にはこれらのサービスが内包されています:
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic)にはこれらのサービスが内包されています:
   * [*log.Logger](http://godoc.org/log#Logger) - Martiniのためのグローバルなlogger.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - http request context.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - `map[string]string`型の、ルートマッチングによって検出されたパラメータ
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - Route helper service.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - http request context.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - `map[string]string`型の、ルートマッチングによって検出されたパラメータ
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - Route helper service.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - http Response writer interface.
   * [*http.Request](http://godoc.org/net/http/#Request) - http Request.
 
@@ -157,7 +157,7 @@ m.NotFound(func() {
 
 ルーティングはそれらの定義された順番に検索され、最初にマッチしたルーティングが呼ばれます。
 
-名前付きパラメータを定義することもできます。これらのパラメータは[martini.Params](http://godoc.org/github.com/go-martini/martini#Params)サービスを通じてアクセスすることができます:
+名前付きパラメータを定義することもできます。これらのパラメータは[martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params)サービスを通じてアクセスすることができます:
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hello " + params["name"]
@@ -222,7 +222,7 @@ m.Run()
 ~~~
 
 #### Request-Level Mapping
-リクエストレベルでのマッピングは[martini.Context](http://godoc.org/github.com/go-martini/martini#Context)を使い、ハンドラ内で行うことができます:
+リクエストレベルでのマッピングは[martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context)を使い、ハンドラ内で行うことができます:
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -241,7 +241,7 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 
 ### 静的ファイル配信
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) インスタンスは、自動的にルート直下の "public" ディレクトリ以下の静的ファイルを配信します。[martini.Static](http://godoc.org/github.com/go-martini/martini#Static)を追加することで、もっと多くのディレクトリを配信することもできます:
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) インスタンスは、自動的にルート直下の "public" ディレクトリ以下の静的ファイルを配信します。[martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)を追加することで、もっと多くのディレクトリを配信することもできます:
 ~~~ go
 m.Use(martini.Static("assets")) // serve from the "assets" directory as well
 ~~~
@@ -276,7 +276,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 
 ### Next()
 
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context) は他のハンドラが実行されたことを取得するために使用する機能です。これはhttpリクエストのあとに実行したい任意の関数があるときに素晴らしく機能します:
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context) は他のハンドラが実行されたことを取得するために使用する機能です。これはhttpリクエストのあとに実行したい任意の関数があるときに素晴らしく機能します:
 ~~~ go
 // log before and after a request
 m.Use(func(c martini.Context, log *log.Logger){
@@ -320,7 +320,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

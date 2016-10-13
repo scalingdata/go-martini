@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 Martini 是一個使用 Go 語言來快速開發模組化 Web 應用程式或服務的強大套件
 
@@ -11,7 +11,7 @@ Martini 是一個使用 Go 語言來快速開發模組化 Web 應用程式或服
 ~~~ go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -24,7 +24,7 @@ func main() {
 
 然後安裝Martini套件 (**go 1.1**以上的版本是必要的)
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 然後利用以下指令執行你的程式:
@@ -68,7 +68,7 @@ go run server.go
 
 ## Classic Martini
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic)
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic)
 提供大部份web應用程式所需要的基本預設功能:
 
 ~~~ go
@@ -76,12 +76,12 @@ go run server.go
   // ... middleware 或 routing 寫在這裡
   m.Run()
 ~~~
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic)
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic)
  會自動提供以下功能
-* Request/Response Logging - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-* Panic Recovery - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-* Static File serving - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-* Routing - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+* Request/Response Logging - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+* Panic Recovery - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+* Static File serving - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+* Routing - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 
 ### Handlers
@@ -121,11 +121,11 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res 和 req 是
 })
 ~~~
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) 包含以下物件:
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) 包含以下物件:
   * [*log.Logger](http://godoc.org/log#Logger) - Martini 的全區域 Logger.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - http request 內文.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - `map[string]string` of named params found by route matching.
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - Route helper 服務.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - http request 內文.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - `map[string]string` of named params found by route matching.
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - Route helper 服務.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - http 回應 writer 介面.
   * [*http.Request](http://godoc.org/net/http/#Request) - http 請求.
 
@@ -164,7 +164,7 @@ m.NotFound(func() {
 
 Routes 依照它們被定義時的順序做比對. 第一個跟請求 (request) 相同的 route 就被執行.
 
-Route 比對模式可以包含變數部分, 可以透過 [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) 物件來取值:
+Route 比對模式可以包含變數部分, 可以透過 [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) 物件來取值:
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hello " + params["name"]
@@ -227,7 +227,7 @@ m.Run()
 ~~~
 
 #### Request-Level Mapping (請求級對應)
-如果只在一個 handler 裡定義, 透由  [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) 獲得一個請求 (request) 級的對應:
+如果只在一個 handler 裡定義, 透由  [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) 獲得一個請求 (request) 級的對應:
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -246,7 +246,7 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 ~~~
 
 ### Serving Static Files
-一個[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) 實體會將伺服器根目錄下 public 子目錄裡的檔案自動當成靜態檔案處理. 你也可以手動用 [martini.Static](http://godoc.org/github.com/go-martini/martini#Static) 增加其他目錄, 例如.
+一個[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) 實體會將伺服器根目錄下 public 子目錄裡的檔案自動當成靜態檔案處理. 你也可以手動用 [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static) 增加其他目錄, 例如.
 ~~~ go
 m.Use(martini.Static("assets")) // "assets" 子目錄裡, 也視為靜態檔案
 ~~~
@@ -293,7 +293,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 ~~~
 
 ### Next()
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context) 是 Middleware Handlers 可以呼叫的選項功能, 用來等到其他 handlers 處理完再開始執行.
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context) 是 Middleware Handlers 可以呼叫的選項功能, 用來等到其他 handlers 處理完再開始執行.
 它常常被用來處理那些必須在 http 請求之後才能發生的事件, 例如:
 ~~~ go
 // 在請求前後加 logs
@@ -344,7 +344,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

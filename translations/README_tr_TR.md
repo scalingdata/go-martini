@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 Martini Go dilinde hızlı ve modüler web uygulamaları ve servisleri için güçlü bir pakettir.
 
@@ -10,7 +10,7 @@ Go kurulumu ve [GOPATH](http://golang.org/doc/code.html#GOPATH) ayarını yaptı
 ~~~ go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -24,7 +24,7 @@ func main() {
 Martini paketini kurduktan sonra (**go 1.1** ve daha üst go sürümü gerekmektedir.):
 
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 Daha sonra server'ımızı çalıştırıyoruz:
@@ -44,7 +44,7 @@ go run server.go
 
 Stackoverflow üzerinde [martini etiketine](http://stackoverflow.com/questions/tagged/martini) sahip sorular
 
-[GO Diline ait Dökümantasyonlar](http://godoc.org/github.com/go-martini/martini)
+[GO Diline ait Dökümantasyonlar](http://godoc.org/github.com/scalingdata/go-martini)
 
 
 ## Özellikler 
@@ -74,7 +74,7 @@ Daha fazla ara katman ve fonksiyonellik için, şu repoları inceleyin [martini-
 * [FAQ](#faq)
 
 ## Classic Martini
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) hızlıca projeyi çalıştırır ve çoğu web uygulaması için iyi çalışan bazı makul varsayılanlar sağlar:
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) hızlıca projeyi çalıştırır ve çoğu web uygulaması için iyi çalışan bazı makul varsayılanlar sağlar:
 
 ~~~ go
   m := martini.Classic()
@@ -82,12 +82,12 @@ Daha fazla ara katman ve fonksiyonellik için, şu repoları inceleyin [martini-
   m.Run()
 ~~~
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) aşağıdaki bazı fonsiyonelleri  otomatik olarak çeker:
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) aşağıdaki bazı fonsiyonelleri  otomatik olarak çeker:
 
-  * İstek/Yanıt Kayıtları (Request/Response Logging) - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-  * Hataların Düzeltilmesi (Panic Recovery) - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-  * Statik Dosyaların Sunumu (Static File serving) - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-  * Yönlendirmeler (Routing) - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+  * İstek/Yanıt Kayıtları (Request/Response Logging) - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+  * Hataların Düzeltilmesi (Panic Recovery) - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+  * Statik Dosyaların Sunumu (Static File serving) - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+  * Yönlendirmeler (Routing) - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 ### İşleyiciler (Handlers)
 İşleyiciler Martini'nin ruhu ve kalbidir. Bir işleyici temel olarak her türlü fonksiyonu çağırabilir:
@@ -128,11 +128,11 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res and req are
 
 Aşağıdaki servislerin içerikleri
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic):
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic):
   * [*log.Logger](http://godoc.org/log#Logger) - Martini için Global loglayıcı.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - http request içereği.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - `map[string]string` ile yol eşleme tarafından params olarak isimlendirilen yapılar bulundu.
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - Yönledirilme için yardımcı olan yapıdır.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - http request içereği.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - `map[string]string` ile yol eşleme tarafından params olarak isimlendirilen yapılar bulundu.
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - Yönledirilme için yardımcı olan yapıdır.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - http yanıtlarını yazacak olan yapıdır.
   * [*http.Request](http://godoc.org/net/http/#Request) - http Request(http isteği yapar).
 
@@ -171,7 +171,7 @@ m.NotFound(func() {
 
 Yollar sırayla tanımlandıkları şekilde eşleştirilir.Request ile eşleşen ilk rota çağrılır.
 
-Yol patternleri [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) servisi tarafından adlandırılan parametreleri içerebilir:
+Yol patternleri [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) servisi tarafından adlandırılan parametreleri içerebilir:
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hello " + params["name"]
@@ -237,7 +237,7 @@ m.Run()
 ~~~
 
 #### Request-Level Mapping
-Request düzeyinde eşleme yapmak üzere işleyici [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) ile oluşturulabilir:
+Request düzeyinde eşleme yapmak üzere işleyici [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) ile oluşturulabilir:
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -257,9 +257,9 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 
 ### Statik Dosyaların Sunumu
 
-[martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) örneği otomatik olarak statik dosyaları serverda root içinde yer alan "public" dizininden servis edilir.
+[martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) örneği otomatik olarak statik dosyaları serverda root içinde yer alan "public" dizininden servis edilir.
 
-Eğer istenirse daha fazla [martini.Static](http://godoc.org/github.com/go-martini/martini#Static) işleyicisi eklenerek daha fazla dizin servis edilebilir.
+Eğer istenirse daha fazla [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static) işleyicisi eklenerek daha fazla dizin servis edilebilir.
 ~~~ go
 m.Use(martini.Static("assets")) // serve from the "assets" directory as well
 ~~~
@@ -303,7 +303,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 ~~~
 
 ### Next()
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context) orta katman işleyicilerinin diğer işleyiciler yok edilmeden çağrılmasını sağlayan opsiyonel bir fonksiyondur.Bu iş http işlemlerinden sonra gerçekleşecek işlemler için gerçekten iyidir:
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context) orta katman işleyicilerinin diğer işleyiciler yok edilmeden çağrılmasını sağlayan opsiyonel bir fonksiyondur.Bu iş http işlemlerinden sonra gerçekleşecek işlemler için gerçekten iyidir:
 ~~~ go
 // log before and after a request
 m.Use(func(c martini.Context, log *log.Logger){
@@ -348,7 +348,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

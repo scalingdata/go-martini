@@ -1,4 +1,4 @@
-# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/go-martini/martini?status.png)](http://godoc.org/github.com/go-martini/martini)
+# Martini  [![wercker status](https://app.wercker.com/status/9b7dbc6e2654b604cd694d191c3d5487/s/master "wercker status")](https://app.wercker.com/project/bykey/9b7dbc6e2654b604cd694d191c3d5487)[![GoDoc](https://godoc.org/github.com/scalingdata/go-martini?status.png)](http://godoc.org/github.com/scalingdata/go-martini)
 
 Martini ist ein mächtiges Package zur schnellen Entwicklung von modularen Webanwendungen und -services in Golang. 
 
@@ -9,7 +9,7 @@ Nach der Installation von Go und dem Einrichten des [GOPATH](http://golang.org/d
 ~~~ go
 package main
 
-import "github.com/go-martini/martini"
+import "github.com/scalingdata/go-martini"
 
 func main() {
   m := martini.Classic()
@@ -22,7 +22,7 @@ func main() {
 
 Installiere anschließend das Martini Package (**Go 1.1** oder höher wird vorausgesetzt):
 ~~~
-go get github.com/go-martini/martini
+go get github.com/scalingdata/go-martini
 ~~~
 
 Starte den Server:
@@ -40,7 +40,7 @@ Schaue das [Demovideo](http://martini.codegangsta.io/#demo)
 
 Stelle Fragen auf Stackoverflow mit dem [Martini-Tag](http://stackoverflow.com/questions/tagged/martini)
 
-GoDoc [Dokumentation](http://godoc.org/github.com/go-martini/martini)
+GoDoc [Dokumentation](http://godoc.org/github.com/scalingdata/go-martini)
 
 
 ## Eigenschaften
@@ -69,19 +69,19 @@ Mehr Informationen zur Middleware und Funktionalität findest Du in den Reposito
 * [FAQ](#faq)
 
 ## Classic Martini
-Einen schnellen Start in ein Projekt ermöglicht [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic), dessen Voreinstellungen sich für die meisten Webanwendungen eignen:
+Einen schnellen Start in ein Projekt ermöglicht [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic), dessen Voreinstellungen sich für die meisten Webanwendungen eignen:
 ~~~ go
   m := martini.Classic()
   // ... Middleware und Routing hier einfügen
   m.Run()
 ~~~
 
-Aufgelistet findest Du einige Aspekte, die [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) automatich berücksichtigt:
+Aufgelistet findest Du einige Aspekte, die [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) automatich berücksichtigt:
 
-  * Request/Response Logging - [martini.Logger](http://godoc.org/github.com/go-martini/martini#Logger)
-  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/go-martini/martini#Recovery)
-  * Static File serving - [martini.Static](http://godoc.org/github.com/go-martini/martini#Static)
-  * Routing - [martini.Router](http://godoc.org/github.com/go-martini/martini#Router)
+  * Request/Response Logging - [martini.Logger](http://godoc.org/github.com/scalingdata/go-martini#Logger)
+  * Panic Recovery - [martini.Recovery](http://godoc.org/github.com/scalingdata/go-martini#Recovery)
+  * Static File serving - [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static)
+  * Routing - [martini.Router](http://godoc.org/github.com/scalingdata/go-martini#Router)
 
 ### Handler
 Handler sind das Herz und die Seele von Martini. Ein Handler ist grundsätzlich jede Art von aufrufbaren Funktionen:
@@ -116,13 +116,13 @@ m.Get("/", func(res http.ResponseWriter, req *http.Request) { // res und req wur
 })
 ~~~
 
-Die Folgenden Services sind Bestandteil von [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic):
+Die Folgenden Services sind Bestandteil von [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic):
 
   * [*log.Logger](http://godoc.org/log#Logger) - Globaler Logger für Martini.
-  * [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) - http request context.
-  * [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) - `map[string]string` von benannten Parametern, welche durch Route Matching gefunden wurden.
-  * [martini.Routes](http://godoc.org/github.com/go-martini/martini#Routes) - Routen Hilfeservice.
-  * [martini.Route](http://godoc.org/github.com/go-martini/martini#Route) - Aktuelle, aktive Route.
+  * [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) - http request context.
+  * [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) - `map[string]string` von benannten Parametern, welche durch Route Matching gefunden wurden.
+  * [martini.Routes](http://godoc.org/github.com/scalingdata/go-martini#Routes) - Routen Hilfeservice.
+  * [martini.Route](http://godoc.org/github.com/scalingdata/go-martini#Route) - Aktuelle, aktive Route.
   * [http.ResponseWriter](http://godoc.org/net/http/#ResponseWriter) - http Response writer interface.
   * [*http.Request](http://godoc.org/net/http/#Request) - http Request.
 
@@ -160,7 +160,7 @@ m.NotFound(func() {
 
 Routen werden in der Reihenfolge, in welcher sie definiert wurden, zugeordnet. Die bei einer Anfrage zuerst zugeordnete Route wird daraufhin aufgerufen.  
 
-Routenmuster enthalten ggf. benannte Parameter, die über den [martini.Params](http://godoc.org/github.com/go-martini/martini#Params) Service abrufbar sind:
+Routenmuster enthalten ggf. benannte Parameter, die über den [martini.Params](http://godoc.org/github.com/scalingdata/go-martini#Params) Service abrufbar sind:
 ~~~ go
 m.Get("/hello/:name", func(params martini.Params) string {
   return "Hallo " + params["name"]
@@ -224,7 +224,7 @@ m.Run()
 ~~~
 
 #### Request-Level Mapping
-Das Zuordnen auf der Request-Ebene kann in einem Handler via  [martini.Context](http://godoc.org/github.com/go-martini/martini#Context) realisiert werden:
+Das Zuordnen auf der Request-Ebene kann in einem Handler via  [martini.Context](http://godoc.org/github.com/scalingdata/go-martini#Context) realisiert werden:
 ~~~ go
 func MyCustomLoggerHandler(c martini.Context, req *http.Request) {
   logger := &MyCustomLogger{req}
@@ -242,7 +242,7 @@ func WrapResponseWriter(res http.ResponseWriter, c martini.Context) {
 ~~~
 
 ### Statische Dateien bereitstellen
-Eine [martini.Classic()](http://godoc.org/github.com/go-martini/martini#Classic) Instanz übertragt automatisch statische Dateien aus dem "public"-Ordner im Stammverzeichnis Deines Servers. Dieses Verhalten lässt sich durch weitere [martini.Static](http://godoc.org/github.com/go-martini/martini#Static) Handler auf andere Verzeichnisse übertragen.
+Eine [martini.Classic()](http://godoc.org/github.com/scalingdata/go-martini#Classic) Instanz übertragt automatisch statische Dateien aus dem "public"-Ordner im Stammverzeichnis Deines Servers. Dieses Verhalten lässt sich durch weitere [martini.Static](http://godoc.org/github.com/scalingdata/go-martini#Static) Handler auf andere Verzeichnisse übertragen.
 ~~~ go
 m.Use(martini.Static("assets")) // überträgt auch vom "assets"-Verzeichnis
 ~~~
@@ -287,7 +287,7 @@ m.Use(func(res http.ResponseWriter, req *http.Request) {
 ~~~
 
 ### Next()
-[Context.Next()](http://godoc.org/github.com/go-martini/martini#Context) ist eine optionale Funktion, die Middleware-Handler aufrufen können, um sie nach dem Beenden der anderen Handler auszuführen. Dies funktioniert besonders gut, wenn Operationen nach einer HTTP-Anfrage ausgeführt werden müssen.
+[Context.Next()](http://godoc.org/github.com/scalingdata/go-martini#Context) ist eine optionale Funktion, die Middleware-Handler aufrufen können, um sie nach dem Beenden der anderen Handler auszuführen. Dies funktioniert besonders gut, wenn Operationen nach einer HTTP-Anfrage ausgeführt werden müssen.
 ~~~ go
 // protokolliere vor und nach einer Anfrage
 m.Use(func(c martini.Context, log *log.Logger){
@@ -342,7 +342,7 @@ package hello
 
 import (
   "net/http"
-  "github.com/go-martini/martini"
+  "github.com/scalingdata/go-martini"
 )
 
 func init() {

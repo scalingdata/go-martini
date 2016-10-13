@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/go-martini/martini",
+	"ImportPath": "github.com/scalingdata/go-martini",
 	"GoVersion": "go1.4.2",
 	"Deps": [
 		{
